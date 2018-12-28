@@ -17,7 +17,8 @@ public class CurrentGuessPanel extends JPanel {
 			JTextField field = new JTextField("     ");
 			field.setEditable(false);
 			field.setMaximumSize(field.getPreferredSize());
-    	    		field.setAlignmentX(Component.CENTER_ALIGNMENT);
+    	    field.setAlignmentX(Component.CENTER_ALIGNMENT);
+    	    field.setColumns(2);
 
 			letters.add(field); // add to vector
 			add(letters.get(i)); //add to JPanel
