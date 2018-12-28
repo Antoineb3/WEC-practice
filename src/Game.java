@@ -4,6 +4,7 @@ public class Game {
 	private String individualLetters = "";
 	private String guesses = "";
 	private String correctGuesses = "";
+	private String badGuesses = "";
 	private boolean victory = false;
 	
 	public Game(String w) {
@@ -37,6 +38,9 @@ public class Game {
 		return victory;
 	}
 	
+	public String getBadGuesses() {
+		return badGuesses;
+	}
 	
 	public int testInput(String letter) {
 		//return 0 if bad guess, 1 is used already, 2 is correct guess
@@ -58,6 +62,7 @@ public class Game {
 		  }
 		  else {
 			  //bad guess
+			  badGuesses = badGuesses.concat(letter);
 			  System.out.println("Bad Guess");
 
 			  return 0;
