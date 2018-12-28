@@ -23,7 +23,7 @@ public class HangmanWindow extends JFrame{
     public HangmanWindow(int wordLen){ 
     
 //		setLayout(new BoxLayout(this, BoxLayout.PAGE_AXIS));
-    	    setPreferredSize(new Dimension(600,500));
+    	    setPreferredSize(new Dimension(400,500));
     	    setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
     	    setLayout(new BoxLayout(this.getContentPane(), BoxLayout.PAGE_AXIS));
@@ -42,15 +42,18 @@ public class HangmanWindow extends JFrame{
 	
 	}
     
-   
+    
+	public CurrentGuessPanel getCurrentGuessPanel() {
+		return currentGuessPanel;
+	}
+
+	public HangmanPanel getHangmanPanel() {
+		return hangmanPanel;
+	}
+
+
+	   
     public GuessCharacterPanel getGuessCharacterPanel() {
 		return guessCharacterPanel;
-	}
-    
-    public static void main(String [] args) {
-    		
-		HangmanWindow window = new HangmanWindow(5); // test wordLen
-		
-		
 	}
 }

@@ -1,5 +1,6 @@
 import java.awt.Dimension;
 import java.awt.Graphics;
+import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -32,6 +33,7 @@ public class HangmanPanel extends JPanel {
 	
 	public void updateHangman() throws LostTheGameException
 	{
+		System.out.println("updating hangman..");
 		try {
 			image = ImageIO.read(new File("Level" + imageNumber + ".png"));
 		}
@@ -44,6 +46,11 @@ public class HangmanPanel extends JPanel {
 		{
 			throw new LostTheGameException("You Lost!");
 		}
+		System.out.println("image num = "+imageNumber);
+//		Graphics2D g = (Graphics2D) this.getGraphics();
+//	    g.drawImage(image, 0, 0, null);
+//	    g.dispose();
+//		paintComponent(image);
 	}
 	
 	@Override
