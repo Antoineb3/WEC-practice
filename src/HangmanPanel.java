@@ -1,6 +1,5 @@
 import java.awt.Dimension;
 import java.awt.Graphics;
-import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -9,13 +8,9 @@ import javax.imageio.ImageIO;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
+@SuppressWarnings("serial")
 public class HangmanPanel extends JPanel {
 
-	/**
-	 * Default serialVersionUID
-	 */
-	private static final long serialVersionUID = 1L;
-	
 	private BufferedImage image;
 	private int imageNumber;
 	
@@ -42,11 +37,11 @@ public class HangmanPanel extends JPanel {
 			System.exit(1);
 		}
 		imageNumber++;
+		repaint();
 		if(imageNumber > 9)
 		{
 			throw new LostTheGameException("You Lost!");
 		}
-		repaint();
 	}
 	
 	@Override

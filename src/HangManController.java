@@ -36,11 +36,19 @@ public class HangManController {
 						window.getHangmanPanel().updateHangman();
 					} catch (LostTheGameException e) {
 						System.out.println("GAME OVER");
-						e.printStackTrace();
+						JOptionPane.showMessageDialog(null, "Congratulations! You Suck!!",
+								"You Lose", JOptionPane.INFORMATION_MESSAGE);
 					}
 				}
 				if(result == 2 ) { // correct guess
+					String progress = game.getProgressString();
+					window.getCurrentGuessPanel().changeWord(progress);
+					boolean win = game.checkVictory();
 					
+					if(win) {
+						JOptionPane.showMessageDialog(null, "Congratulations! You Win!!",
+								"You Win", JOptionPane.INFORMATION_MESSAGE);
+					}
 				}
 				else {
 					//guess was used already
