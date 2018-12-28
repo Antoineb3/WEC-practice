@@ -26,8 +26,7 @@ public class HangmanPanel extends JPanel {
 		catch(LostTheGameException ex)
 		{
 			 JOptionPane.showMessageDialog(null, ex.getMessage(), "InfoBox: " + "End of Game", JOptionPane.INFORMATION_MESSAGE);
-		}
-		
+		}		
 		setPreferredSize(new Dimension(400, 300));
 	}
 	
