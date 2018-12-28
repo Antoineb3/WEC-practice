@@ -9,13 +9,14 @@ import javax.swing.JTextField;
 public class GuessCharacterPanel extends JPanel{
 
 	// new guess box (small)
-    private JTextField guessTextField = new JTextField(" ");
+    private JTextField guessTextField = new JTextField("     ");
 
 	// button to submit guess
     private JButton submitGuessButton = new JButton("Submit Guess");
     
     public GuessCharacterPanel() {
     	
+    	    guessTextField.setMaximumSize(guessTextField.getPreferredSize());
     	    guessTextField.setAlignmentX(Component.CENTER_ALIGNMENT);
 		add(guessTextField);
     	

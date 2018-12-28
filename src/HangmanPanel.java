@@ -1,3 +1,4 @@
+import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 import java.io.File;
@@ -26,6 +27,8 @@ public class HangmanPanel extends JPanel {
 		{
 			 JOptionPane.showMessageDialog(null, ex.getMessage(), "InfoBox: " + "End of Game", JOptionPane.INFORMATION_MESSAGE);
 		}
+		
+		setPreferredSize(new Dimension(400, 300));
 	}
 	
 	public void updateHangman() throws LostTheGameException

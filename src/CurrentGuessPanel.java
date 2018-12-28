@@ -1,3 +1,4 @@
+import java.awt.Component;
 import java.util.Vector;
 
 import javax.swing.JPanel;
@@ -12,12 +13,16 @@ public class CurrentGuessPanel extends JPanel {
 	
 	
 	public CurrentGuessPanel(int length) {
-		letters = new Vector<JTextField>(length);
+		letters = new Vector<JTextField>();
 		
 		for(int i=0; i<length; i++) {
-			letters.set(i, new JTextField(" "));
-			letters.get(i).setEditable(false);
-			add(letters.get(i));
+			JTextField field = new JTextField("     ");
+			field.setEditable(false);
+			field.setMaximumSize(field.getPreferredSize());
+    	    		field.setAlignmentX(Component.CENTER_ALIGNMENT);
+
+			letters.add(field); // add to vector
+			add(letters.get(i)); //add to JPanel
 		}
 	}
 	
