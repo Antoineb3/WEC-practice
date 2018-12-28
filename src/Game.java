@@ -78,5 +78,23 @@ public class Game {
 		return letters;
 	}
 	
-	
+	public String returnProgressString() {
+		String progress = new String();
+		for(int i = 0; i < word.length(); i++) {
+			boolean found = false;
+			char currentLetter = word.charAt(i);
+			for(int j = 0; j < correctGuesses.length(); j++) {
+				if(currentLetter == correctGuesses.charAt(j)) {
+					progress = progress.concat(Character.toString(currentLetter));
+					found = true;
+					break;
+				}
+			}
+			if(!found) {
+				progress = progress.concat(" ");
+			}
+		}
+		return progress;
+	}
+
 }
