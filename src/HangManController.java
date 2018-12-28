@@ -22,11 +22,11 @@ public class HangManController {
 
 		@Override
 		public void actionPerformed(ActionEvent arg0) {
-			System.out.println("listener");
 			String input = window.getGuessCharacterPanel().getInput();
-			input = input.toLowerCase();
+			
 			if(validInput(input)) {
 				//run logic 
+				input = input.toLowerCase();
 				int result = game.testInput(input);
 				
 				
@@ -55,10 +55,9 @@ public class HangManController {
 		}
 		
 		private boolean validInput(String input) {
-			Character c = input.charAt(0);
 			System.out.println("input: " + input);
 			//true if length == 1 and the char is the letter 
-			if(input.length()!=1 || !Character.isLetter(c)){
+			if(input.length()!=1 || !Character.isLetter(input.charAt(0))){
 				return false;
 			}
 			return true;

@@ -38,7 +38,8 @@ public class HangmanPanel extends JPanel {
 		}
 		catch(IOException ex)
 		{
-			System.err.println("Couln't find requested file");
+			System.err.println("Couln't find requested image ");
+			System.exit(1);
 		}
 		imageNumber++;
 		if(imageNumber > 9)
