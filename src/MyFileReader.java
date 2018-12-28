@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.util.Random;
 import java.util.Vector;
 
-import com.apple.eawt.AppEvent.PrintFilesEvent;
 
 public class MyFileReader {
 	
