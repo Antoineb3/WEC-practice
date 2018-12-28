@@ -3,12 +3,15 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JOptionPane;
 
+import com.sun.xml.internal.ws.handler.HandlerProcessor.RequestOrResponse;
+
 public class HangManController {
 
-	
-	
-	public HangManController() {
-		// TODO Auto-generated constructor stub
+	private HangmanWindow window; // view
+	//private Game game; // model
+
+	public HangManController(HangmanWindow w) {
+		window = w;
 	}
 
 	
@@ -16,20 +19,26 @@ public class HangManController {
 
 		@Override
 		public void actionPerformed(ActionEvent arg0) {
-			if(validInputs()) {
+			String input = window.getGuessCharacterPanel().getInput();
+			input = input.toLowerCase();
+			Character c = input.charAt(0);
+			if(validInput(input, c)) {
 				//run logic 
+				//game.checkLetter(c);
 			}
 			else {
-				JOptionPane.showMessageDialog(null, "Error: Invalid inputs, please try again", "Error",
+				JOptionPane.showMessageDialog(null, "Error: Invalid input, please try again", "Error",
 						JOptionPane.WARNING_MESSAGE);
-				//inputGUI.clearFields();
 			}
-			
+			window.getGuessCharacterPanel().clearInputField();
 		}
 		
-		private boolean validInputs() {
-			
-			return false;
+		private boolean validInput(String input, Character c) {
+			//true if length == 1 and the char is the letter 
+			if(input.length()!=1 || !Character.isLetter(c)){
+				return false;
+			}
+			return true;
 		}
 	}
 }
