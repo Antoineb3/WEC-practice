@@ -78,7 +78,7 @@ public class Game {
 		return letters;
 	}
 	
-	public String returnProgressString() {
+	public String getProgressString() {
 		String progress = new String();
 		for(int i = 0; i < word.length(); i++) {
 			boolean found = false;
