@@ -15,7 +15,7 @@ public class MyFileReader {
 		readFile(inputFileName);
 	}
 	
-	private int getRandomNumberInRange(int min, int max) {
+	private static int getRandomNumberInRange(int min, int max) {
 		if (min >= max) {
 			throw new IllegalArgumentException("max must be greater than min");
 		}
@@ -39,7 +39,7 @@ public class MyFileReader {
 		}		
 	}
 
-	private String getRandomWord() {
+	public String getRandomWord() {
 		int randNum = getRandomNumberInRange(0, words.size());
 		return words.get(randNum);
 	}
