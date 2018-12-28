@@ -1,12 +1,14 @@
 import java.awt.Component;
 import java.util.Vector;
 
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 public class CurrentGuessPanel extends JPanel {
 
 	private Vector<JTextField> letters;
+
 	
 	private static final long serialVersionUID = 1321L;
 
@@ -24,6 +26,8 @@ public class CurrentGuessPanel extends JPanel {
 			letters.add(field); // add to vector
 			add(letters.get(i)); //add to JPanel
 		}
+		
+		
 	}
 	
 	public void changeWord(String word) {
@@ -31,6 +35,8 @@ public class CurrentGuessPanel extends JPanel {
 			letters.get(i).setText(word.substring(i, i+1));
 		}
 	}
+	
+	
 
 
 
