@@ -10,20 +10,12 @@ public class HangmanWindow extends JFrame{
 	private GuessCharacterPanel guessCharacterPanel;
 	private CurrentGuessPanel currentGuessPanel;
 	private HangmanPanel hangmanPanel;
-	// Hangman diagram
-	
-	// wrong guesses box
-	
 
-	// Layout of the word to guess
-
-    
 
 	//ctor
     public HangmanWindow(int wordLen){ 
-    
-//		setLayout(new BoxLayout(this, BoxLayout.PAGE_AXIS));
-    	    setPreferredSize(new Dimension(400,500));
+   
+    	  	setPreferredSize(new Dimension(400,500));
     	    setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
     	    setLayout(new BoxLayout(this.getContentPane(), BoxLayout.PAGE_AXIS));
@@ -50,7 +42,6 @@ public class HangmanWindow extends JFrame{
 	public HangmanPanel getHangmanPanel() {
 		return hangmanPanel;
 	}
-
 
 	   
     public GuessCharacterPanel getGuessCharacterPanel() {

@@ -11,50 +11,50 @@ import javax.swing.JTextField;
 public class GuessCharacterPanel extends JPanel{
 
 	// new guess box (small)
-    private JTextField guessTextField = new JTextField("");
+	private JTextField guessTextField = new JTextField("");
 
 	// button to submit guess
-    private JButton submitGuessButton = new JButton("Submit Guess");
-    
-    //label for bad guesses
-    private JLabel badGuesses = new JLabel();
-    
-    public GuessCharacterPanel() {
-    	
-    	
-        guessTextField.setColumns(3);                 
+	private JButton submitGuessButton = new JButton("Submit Guess");
 
-    	guessTextField.setMaximumSize(guessTextField.getPreferredSize());
-    	
-	    setLayout(new BoxLayout(this, BoxLayout.PAGE_AXIS));
+	//label for bad guesses
+	private JLabel badGuesses = new JLabel();
 
-	    badGuesses.setText("");
-	    badGuesses.setAlignmentX(Component.CENTER_ALIGNMENT);
+	public GuessCharacterPanel() {
+
+
+		guessTextField.setColumns(3);                 
+
+		guessTextField.setMaximumSize(guessTextField.getPreferredSize());
+
+		setLayout(new BoxLayout(this, BoxLayout.PAGE_AXIS));
+
+		badGuesses.setText(" ");
+		badGuesses.setAlignmentX(Component.CENTER_ALIGNMENT);
 		add(badGuesses);
-	    
-	    
-    	guessTextField.setAlignmentX(Component.CENTER_ALIGNMENT);
+
+
+		guessTextField.setAlignmentX(Component.CENTER_ALIGNMENT);
 		add(guessTextField);
-    	
-		
-	    submitGuessButton.setAlignmentX(Component.CENTER_ALIGNMENT);
+
+
+		submitGuessButton.setAlignmentX(Component.CENTER_ALIGNMENT);
 		add(submitGuessButton);
-		
-    }
-    
-    public void setSubmitGuessButtonListener(ActionListener e) {
-    		submitGuessButton.addActionListener(e);
+
 	}
-    
-    public String getInput(){
-    		return guessTextField.getText();
-    }
-    
-    public void clearInputField() {
-    		guessTextField.setText("");
-    }
-    
-    public void setGuessString(String guesses) {
-    	badGuesses.setText(guesses);
-    }
+
+	public void setSubmitGuessButtonListener(ActionListener e) {
+		submitGuessButton.addActionListener(e);
+	}
+
+	public String getInput(){
+		return guessTextField.getText();
+	}
+
+	public void clearInputField() {
+		guessTextField.setText("");
+	}
+
+	public void setGuessString(String guesses) {
+		badGuesses.setText(guesses);
+	}
 }

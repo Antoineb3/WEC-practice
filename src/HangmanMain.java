@@ -9,10 +9,6 @@ public class HangmanMain {
 		Game game = new Game(word);
 		HangmanWindow window = new HangmanWindow(word.length()); 
 		HangManController controller = new HangManController(game, window) ;
-
-
 	}
-
-
 
 }

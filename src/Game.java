@@ -63,6 +63,8 @@ public class Game {
 		  else {
 			  //bad guess
 			  badGuesses = badGuesses.concat(letter);
+			  badGuesses = badGuesses.concat(", ");
+
 			  System.out.println("Bad Guess");
 
 			  return 0;
