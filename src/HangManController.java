@@ -84,8 +84,8 @@ public class HangManController {
 		MyFileReader fileReader = new MyFileReader("words.txt");
 		String word = fileReader.getRandomWord();
 		game = new Game(word);
-		HangmanWindow w = new HangmanWindow(word.length()); 
-		window = w;
+		window.dispose();
+		window = new HangmanWindow(word.length()); 
 		window.getGuessCharacterPanel().setSubmitGuessButtonListener(new ButtonListener());
 
 	}
