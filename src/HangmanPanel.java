@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.IOException;
 
 import javax.imageio.ImageIO;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 public class HangmanPanel extends JPanel {
@@ -23,7 +24,7 @@ public class HangmanPanel extends JPanel {
 		}
 		catch(LostTheGameException ex)
 		{
-			System.err.println(ex.getMessage());
+			 JOptionPane.showMessageDialog(null, ex.getMessage(), "InfoBox: " + "End of Game", JOptionPane.INFORMATION_MESSAGE);
 		}
 	}
 	
