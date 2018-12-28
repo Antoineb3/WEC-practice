@@ -3,7 +3,7 @@ import java.util.Vector;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-public class GuessPanel extends JPanel {
+public class CurrentGuessPanel extends JPanel {
 
 	private Vector<JTextField> letters;
 	
@@ -11,7 +11,7 @@ public class GuessPanel extends JPanel {
 
 	
 	
-	public GuessPanel(int length) {
+	public CurrentGuessPanel(int length) {
 		letters = new Vector<JTextField>(length);
 		
 		for(int i=0; i<length; i++) {

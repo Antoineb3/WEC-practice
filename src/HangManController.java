@@ -3,7 +3,6 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JOptionPane;
 
-import com.sun.xml.internal.ws.handler.HandlerProcessor.RequestOrResponse;
 
 public class HangManController {
 

@@ -3,14 +3,12 @@ import java.awt.Dimension;
 import javax.swing.BoxLayout;
 import javax.swing.JFrame;
 
+@SuppressWarnings("serial")
 public class HangmanWindow extends JFrame{
 
-	/**
-	 * Serial version ID was automatically generated
-	 */
-	private static final long serialVersionUID = -2162141288814846399L;
 	
 	private GuessCharacterPanel guessCharacterPanel;
+	private CurrentGuessPanel currentGuessPanel;
 	
 	// Hangman diagram
 	
@@ -22,19 +20,26 @@ public class HangmanWindow extends JFrame{
     
 
 	//ctor
-    public HangmanWindow(){ 
+    public HangmanWindow(int wordLen){ 
     
 		setLayout(new BoxLayout(this, BoxLayout.PAGE_AXIS));
 		setPreferredSize(new Dimension(800,600));
 		
 		guessCharacterPanel = new GuessCharacterPanel();
-		
+		currentGuessPanel = new CurrentGuessPanel(wordLen);
+
+		add(currentGuessPanel);
+		add(guessCharacterPanel);
 	
 	}
     
-    
-
+   
     public GuessCharacterPanel getGuessCharacterPanel() {
 		return guessCharacterPanel;
+	}
+    
+    public static void main() {
+    		
+		
 	}
 }
