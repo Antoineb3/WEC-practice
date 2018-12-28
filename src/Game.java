@@ -6,9 +6,8 @@ public class Game {
 	private String correctGuesses = "";
 	private boolean victory = false;
 	
-	public Game() {
-		MyFileReader fileReader = new MyFileReader("words.txt");
-		word = fileReader.getRandomWord();
+	public Game(String w) {
+		word = w;
 		individualLetters = getIndividualLetters(word);
 		System.out.println(word);
 	};
@@ -39,24 +38,34 @@ public class Game {
 	}
 	
 	
-	public void testInput(String letter) {
+	public int testInput(String letter) {
+		//return 0 if bad guess, 1 is used already, 2 is correct guess
       
 	  if(usedAlready(letter)) {
 		  System.out.println("Letter has been guessed already");
+		  return 1;
 	  }
 	  else {
 		  guesses = guesses.concat(letter);
 		  if(word.indexOf(letter) >= 0) {
+			  //correct guess
+			  System.out.println("Correct Guess");
 			  correctGuesses = correctGuesses.concat(letter);
+			  if(correctGuesses.length() == individualLetters.length()) {
+				  victory = true;
+			  }
+			  return 2;
+		  }
+		  else {
+			  //bad guess
+			  System.out.println("Bad Guess");
+
+			  return 0;
 		  }
 		  
 	  }
 	  
-	  if(correctGuesses.length() == individualLetters.length()) {
-		  victory = true;
-	  }
-		  
-	};
+	}
 	
 	public String getIndividualLetters(String word) {
 		String letters = "";

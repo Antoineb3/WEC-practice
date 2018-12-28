@@ -7,11 +7,13 @@ import javax.swing.JOptionPane;
 public class HangManController {
 
 	private HangmanWindow window; // view
-	//private Game game; // model
+	
+	private Game game; // model
 
-	public HangManController(HangmanWindow w) {
+	public HangManController(Game g, HangmanWindow w) {
 		window = w;
 		window.getGuessCharacterPanel().setSubmitGuessButtonListener(new ButtonListener());
+		game = g;
 	}
 
 	
@@ -23,16 +25,26 @@ public class HangManController {
 			System.out.println("listener");
 			String input = window.getGuessCharacterPanel().getInput();
 			input = input.toLowerCase();
-			Character c = input.charAt(0);
-			if(validInput(input, c)) {
+			if(validInput(input)) {
 				//run logic 
-				//game.checkLetter(c);
-				window.getHangmanPanel().repaint();
-				try {
-					window.getHangmanPanel().updateHangman();
-				} catch (LostTheGameException e) {
-					System.out.println("GAME OVER");
-					e.printStackTrace();
+				int result = game.testInput(input);
+				
+				
+				if(result==0) {
+					//bad guess
+					try {
+						window.getHangmanPanel().updateHangman();
+					} catch (LostTheGameException e) {
+						System.out.println("GAME OVER");
+						e.printStackTrace();
+					}
+				}
+				if(result == 2 ) { // correct guess
+					
+				}
+				else {
+					//guess was used already
+					//do nothing
 				}
 			}
 			else {
@@ -42,7 +54,8 @@ public class HangManController {
 			window.getGuessCharacterPanel().clearInputField();
 		}
 		
-		private boolean validInput(String input, Character c) {
+		private boolean validInput(String input) {
+			Character c = input.charAt(0);
 			System.out.println("input: " + input);
 			//true if length == 1 and the char is the letter 
 			if(input.length()!=1 || !Character.isLetter(c)){
